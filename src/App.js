@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-
+import ClothesPage from './pages/Clothes/ClothesPage';
+import UserState from './firebase/userState';
+import SignIn from './pages/UserManage/SignIn';
+import SignUp from './pages/UserManage/SignUp';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UserState>
+        {/* <SignIn /> */}
+        <SignUp/>
+        <ClothesPage />
+      </UserState>
+    </>
   );
 }
 
