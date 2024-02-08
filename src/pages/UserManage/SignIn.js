@@ -2,17 +2,17 @@ import React, { useContext, useState } from 'react';
 import signIn from '../../firebase/userAuth';
 import { userContext } from '../../firebase/userState';
 
-export default function SignIn() {
+export default function SignIn(props) {
     const [userDetail, setUserDetail] = useState({ email: "", password: "" });
-    const { setUser } = useContext(userContext);
-
+    const { user, setUser } = useContext(userContext);
 
     const handleSignIn = async (e) => {
         e.preventDefault();
         signIn(userDetail)
             .then((data) => {
-                console.log(data.uid)
                 setUser(data);
+                props.setSignIn(true);
+                console.log(user)
             })
             .catch(err => console.log(err));
     }

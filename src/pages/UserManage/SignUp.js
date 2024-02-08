@@ -6,7 +6,6 @@ export default function SignUp() {
     const [userDetail, setUserDetail] = useState({ email: "", password: "", confirmPassword: "" });
     const { setUser } = useContext(userContext);
 
-
     const handleSignIn = async (e) => {
         e.preventDefault();
         if (userDetail.password === userDetail.confirmPassword) {
