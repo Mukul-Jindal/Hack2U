@@ -7,9 +7,13 @@ import UploadImage from './pages/UploadImage/UploadImage';
 
 import { useState } from 'react';
 import React from 'react';
-import {Sign} from "./pages/Register/signUp";
-import {Login} from "./pages/Register/login";
-
+import { Sign } from "./pages/Register/signUp";
+import { Login } from "./pages/Register/login";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from 'react-router-dom'
 
 function App() {
   const [isSignIn, setSignIn] = useState(false);
@@ -17,14 +21,20 @@ function App() {
   return (
     <>
       <UserState>
-        <SignIn setSignIn={setSignIn} />
-        {/* <SignUp/> */}
-        <UploadImage />
-        {
-          isSignIn
+        <Router>
+          <Routes>
+
+            {/* <SignIn setSignIn={setSignIn} /> */}
+            <Route exact path='/' element={<Sign/>} />
+            {/* <SignUp/> */}
+            {/* <UploadImage />
+          {
+            isSignIn
             ? <ClothesPage />
             : <></>
-        }
+          } */}
+          </Routes>
+        </Router>
       </UserState>
     </>
   );
