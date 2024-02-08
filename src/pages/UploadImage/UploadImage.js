@@ -9,11 +9,11 @@ export default function UploadImage() {
         e.preventDefault();
         console.log(file);
         let query = {
-            "gender" : "men",
-            "cloth" : "hoodie",
-            "color" : "black"
+            "gender": "men",
+            "cloth": "hoodie",
+            "color": "black"
         }
-        uploadFile(user,file,query).then((mess)=>{console.log(mess)});
+        uploadFile(user, file, query).then((mess) => { console.log(mess) });
     }
     const handleChange = (e) => {
         console.log(user);

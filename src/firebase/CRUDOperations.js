@@ -58,7 +58,7 @@ export function uploadFile(user, file, query) {
                 // Upload completed successfully, now we can get the download URL
                 getDownloadURL(uploadTask.snapshot.ref)
                     .then((url) => {
-                        setDoc(doc(db, `Clothes/${user.uid}/${query['cloth']}/${url.slice(149,url.length)}`), {
+                        setDoc(doc(db, `Clothes/${user.uid}/${query['cloth']}/${url.slice(url.indexOf("token=")+6,url.length)}`), {
                             color: query['color'],
                             cloth : query['cloth'],
                             gender: query['gender'],
