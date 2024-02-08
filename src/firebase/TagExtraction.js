@@ -1,5 +1,5 @@
 export default function giveKeywords(text) {
-    text= text.toLowerCase()
+    text = text.toLowerCase()
     text = text.split(" ");
     const color_entities = ['white', 'red', 'green', 'grey', 'violet', 'brown', 'navy blue', 'lemon yellow',
         'amber', 'charcoal', 'olive', 'ruby', 'ivory', 'emerald', 'arctic blue',
@@ -15,20 +15,20 @@ export default function giveKeywords(text) {
     const gender_entities = ['men', 'boy', 'women', 'girl', 'unisex']
     const extracted_entities = {
         "gender": text.filter((word) => {
-            if (gender_entities.indexOf(word.toLowerCase())>-1) {
+            if (gender_entities.indexOf(word.toLowerCase()) > -1) {
                 return word;
             }
         }),
         "clothes": text.filter((word) => {
-            if (clothes_entities.indexOf(word.toLowerCase())>-1) {
+            if (clothes_entities.indexOf(word.toLowerCase()) > -1) {
                 return word;
             }
         }),
-        "color":text.filter((word) => {
-            if (color_entities.indexOf(word.toLowerCase())>-1) {
+        "color": text.filter((word) => {
+            if (color_entities.indexOf(word.toLowerCase()) > -1) {
                 return word;
             }
         }),
     }
-    return Array(extracted_entities['gender'],extracted_entities['clothes'],extracted_entities['color']);
+    return Array(extracted_entities['gender'], extracted_entities['clothes'], extracted_entities['color']);
 }
