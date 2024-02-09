@@ -44,16 +44,16 @@ export const Login = () => {
       <div className="login__left">
         <div className="nav-bar login_br">
           <Link to="/"><img className="nav_logo" src={logo3} alt="logo" /></Link>
-          <span className="lingo">Lingo</span>
-          <span className="pedia">Pedia</span>
+          <span className="lingo">Style</span>
+          <span className="pedia">Synth</span>
         </div>
         <div className="login__image">
           <img src={login} alt="login" />
         </div>
         <div className="login__image-text">
           <p>
-            "Dive right into the rich tapestry of languages and <br />
-            continue your learning adventure."
+            "Dive right into the rich tapestry of styles and <br />
+            continue your fashion adventure."
           </p>
         </div>
       </div>
