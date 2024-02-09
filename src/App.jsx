@@ -14,6 +14,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom'
+import { Home } from './pages/Home/home';
 
 function App() {
   const [isSignIn, setSignIn] = useState(false);
@@ -23,17 +24,9 @@ function App() {
       <UserState>
         <Router>
           <Routes>
-
-            {/* <SignIn setSignIn={setSignIn} /> */}
+            <Route exact path='/' element = {<Home/>}/>
             <Route exact path='/login' element={<Login/>} />
             <Route exact path='/register' element={<Sign/>} />
-            {/* <SignUp/> */}
-            {/* <UploadImage />
-          {
-            isSignIn
-            ? <ClothesPage />
-            : <></>
-          } */}
           </Routes>
         </Router>
       </UserState>
