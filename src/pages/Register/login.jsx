@@ -42,11 +42,6 @@ export const Login = () => {
   return (
     <div className="login">
       <div className="login__left">
-        <div className="nav-bar login_br">
-          <Link to="/"><img className="nav_logo" src={logo3} alt="logo" /></Link>
-          <span className="lingo">Style</span>
-          <span className="pedia">Synth</span>
-        </div>
         <div className="login__image">
           <img src={login} alt="login" />
         </div>

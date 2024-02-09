@@ -241,8 +241,8 @@ line-height: normal;
     margin-right: 0.4%;
     background: white;
   }
-  .lingo {
-    color: #2e5772;
+   .lingo {
+    color: #2e5772 ; 
     margin-top: 0.85%;
     margin-bottom: 0.5%;
     text-align: center;

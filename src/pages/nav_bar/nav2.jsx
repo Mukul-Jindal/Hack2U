@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Link,useLocation } from 'react-router-dom';
 
 import './navBarStyles.css';
-import   logo3  from "../../Assets/logo3.svg";
+// import   logo3  from "../../Assets/logo3.svg";
 
 
 export const Navbar = () => {
@@ -21,7 +21,7 @@ export const Navbar = () => {
 
     <nav className='nav'>
              <div class="id">
-             <Link to="/"><img className="nav_logo" src={logo3} alt="logo"></img></Link>
+             {/* <Link to="/"><img className="nav_logo" src={logo3} alt="logo"></img></Link> */}
              <span className='lingo'>Lingo</span><span className='pedia'>Pedia</span>
             </div>
             

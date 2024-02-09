@@ -40,11 +40,6 @@ export const Sign = () => {
   return (
     <div className="login">
       <div className="login__left">
-        <div className="nav-bar login_br">
-          <Link to="/"><img className="nav_logo" src={logo3} alt="logo" /></Link>
-          <span className="lingo">Lingo</span>
-          <span className="pedia">Pedia</span>
-        </div>
         <div className="login__image resize">
           <img src={login} alt="login" />
         </div>
