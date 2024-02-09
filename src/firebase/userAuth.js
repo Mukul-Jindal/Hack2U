@@ -1,9 +1,9 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./initiate";
 
-export default function signIn(details) {
+export default function signIn(email,password) {
     return new Promise((resolve, reject) => {
-        signInWithEmailAndPassword(auth, details.email, details.password)
+        signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 resolve(userCredential.user);
             })
@@ -13,9 +13,9 @@ export default function signIn(details) {
     })
 }
 
-export function signUp(details) {
+export function signUp(email,password) {
     return new Promise((resolve, reject) => {
-        createUserWithEmailAndPassword(auth, details.email, details.password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 resolve(userCredential.user);
             })

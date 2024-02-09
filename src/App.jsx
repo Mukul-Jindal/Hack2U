@@ -25,7 +25,8 @@ function App() {
           <Routes>
 
             {/* <SignIn setSignIn={setSignIn} /> */}
-            <Route exact path='/' element={<Sign/>} />
+            <Route exact path='/login' element={<Login/>} />
+            <Route exact path='/register' element={<Sign/>} />
             {/* <SignUp/> */}
             {/* <UploadImage />
           {

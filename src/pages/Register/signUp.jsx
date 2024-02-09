@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import logo3 from "../../Assets/Login page/logo4.svg"
 import login from "../../Assets/Login page/signup.png"
 import logo from "../../Assets/Login page/thinking.svg"
@@ -8,13 +8,27 @@ import eye from "../../Assets/Login page/el_eye-close (1).png"
 import eye_open from "../../Assets/Login page/eye-open2.svg"
 import "./login.css"
 import { Link } from 'react-router-dom';
+import { userContext } from "../../firebase/userState";
+import { signUp } from '../../firebase/userAuth'
 
 export const Sign = () => {
-
+  const [emailEntered, setEmail] = useState('');
+  const [passwordEntered, setPassword] = useState('');
+  const { user, setUser } = useContext(userContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signUp(emailEntered, passwordEntered)
+      .then((userFetched) => {
+        setUser(userFetched);
+        console.log(user)
+      })
+      .catch((err) => {
+        console.log(err)
+      });
+  }
   function togglePasswordVisibility() {
     const passwordInput = document.getElementById("password");
     const eyeIcon = document.getElementById("eyeIcon");
-
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
       eyeIcon.src = eye_open; // Change the image source to an open eye icon
@@ -45,19 +59,21 @@ export const Sign = () => {
             <img src={logo} alt="logo" />
           </div>
           <div className="login__form-details">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="login__form-input">
                 <img src={email} alt="email" />
-                <input type="email" placeholder="Enter Email" />
+                <input type="email" placeholder="Enter Email" onChange={(e) => { setEmail(e.target.value) }} />
               </div>
               <div className="login__form-input">
                 <img src={key} alt="key" />
-                <input type="password" id="password" placeholder="Enter Password" />
-                <img class="eye" src={eye} alt="eye" id="eyeIcon" onClick={togglePasswordVisibility} />
+                <input type="password" id="password" placeholder="Enter Password" onChange={(e) => { setPassword(e.target.value) }} />
+                <img className="eye" src={eye} alt="eye" id="eyeIcon" onClick={togglePasswordVisibility} />
               </div>
-              <Link to="/language"><button className="login__form-button">
-                <span class="text ">Explore</span>
-              </button></Link>
+              {/* <Link to="/"> */}
+                <button className="login__form-button" >
+                <span className="text ">Explore</span>
+              </button>
+              {/* </Link> */}
             </form>
             <Link to="/login" className="login_change">------- <span>Already an Account</span>   -------</Link>
           </div>
