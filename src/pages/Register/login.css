@@ -157,7 +157,7 @@ line-height: normal;
 @media screen and (max-width: 768px) {
     .login__image{
         height: 100%;
-        width: 100%;
+        width: 50%;
     }
     .login__form-title{
         width: 100%;
