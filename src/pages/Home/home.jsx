@@ -8,6 +8,9 @@ import lingual from "../../Assets/main page/lingual.svg";
 import testing from "../../Assets/main page/testing.svg";
 import notes from "../../Assets/main page/notes.svg";
 import footer1 from "../../Assets/main page/footer1.jpg";
+import b from "../../Assets/main page/b.png";
+import btype from "../../Assets/main page/btype.png";
+import uplo from "../../Assets/main page/uplo.png";
 import { FaInstagram, FaTwitter } from "react-icons/fa";
 import { ImFacebook2 } from "react-icons/im";
 
@@ -43,17 +46,17 @@ export const Home = () => {
     transition: "font-size 0.3s ease-in-out",
   };
   return (
-    <>
+    <div style={{ width: "100%" }}>
       <Nav />
-      <div style={{ width: "100%" }}>
+      
         <div className="home_top_box">
           <div className="top_content">
             <div className="content_main_line">
-              Languages have never been so easy.
+              Styling has never been this easy.
             </div>
             <p className="content">
-              “Discover the ease of mastering languages and empower your voice
-              through language, with confidence on your learning journey."
+              “Discover the ease of virtually styling and exploring various
+              mix and match options, with confidence on your styling journey."
             </p>
             <Link to="/register" className="btn_started btn">
               Get Started
@@ -69,10 +72,10 @@ export const Home = () => {
 
         <div className="home_features">
           <div className="feature ">
-            <img src={efforts} alt="efforts" className="feature_image" />
+            <img src={b} alt="efforts" className="feature_image" />
             <div className="feature_content hidden2 ">
               <p id="f1_title" className="title ">
-                “Learn from Experts”
+                "Try Virtually"
               </p>
               <p id="f1_desc" className="desc">
                 Access top-tier language instructors and curated YouTube content
@@ -83,7 +86,7 @@ export const Home = () => {
           <div className="feature ">
             <div className="feature_content hidden">
               <p id="f2_title" className="title">
-                “Multilingual Support”
+                “Style with your size”
               </p>
               <p id="f2_desc" className="desc">
                 Learn the language you want, in your preferred language.
@@ -92,7 +95,7 @@ export const Home = () => {
             <img
               className="feature_image"
               id="img-2"
-              src={lingual}
+              src={btype}
               alt="efforts"
             />
           </div>
@@ -101,7 +104,7 @@ export const Home = () => {
             <img src={testing} alt="testing" className="feature_image" />
             <div className="feature_content hidden2">
               <p id="f3_title" className="title">
-                “Interactive Quizzes”
+                “Interactive AI”
               </p>
               <p id="f3_desc" className="desc">
                 Test your skills and track your language proficiency.
@@ -112,13 +115,13 @@ export const Home = () => {
           <div className="feature">
             <div className="feature_content  hidden">
               <p id="f4_title" className="title">
-                “Upload Your Notes”
+                “Upload Your Outfits”
               </p>
               <p id="f4_desc" className="desc">
                 Share your knowledge and earn money with each download.
               </p>
             </div>
-            <img src={notes} alt="efforts" className="feature_image" />
+            <img src={uplo} alt="efforts" className="feature_image" />
           </div>
         </div>
 
@@ -155,6 +158,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-    </>
+   
   );
 };
