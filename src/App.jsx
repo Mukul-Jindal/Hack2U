@@ -15,6 +15,7 @@ import {
   Routes,
 } from 'react-router-dom'
 import { Home } from './pages/Home/home';
+import Prompt from './pages/prompt/Prompt';
 
 function App() {
   const [isSignIn, setSignIn] = useState(false);
@@ -28,6 +29,7 @@ function App() {
             <Route exact path='/' element = {<Home/>}/>
             <Route exact path='/login' element={<Login/>} />
             <Route exact path='/register' element={<Sign/>} />
+            <Route exact path='/prompt' element={<Prompt/>} />
           </Routes>
         </Router>
       </UserState>
